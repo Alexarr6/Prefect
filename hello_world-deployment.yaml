@@ -1,7 +1,7 @@
 ###
 ### A complete description of a Prefect Deployment for flow 'hello-world'
 ###
-name: demo-deployment
+name: github-deployment
 description: null
 version: 26124ef1302aee2717edd944181f23ab
 # The work queue that will handle this deployment's runs
@@ -28,9 +28,18 @@ infrastructure:
 ###
 flow_name: hello-world
 manifest_path: null
-storage: null
-path: /home/alex/Prefect
-entrypoint: hello:hello_world
+storage:
+  repository: https://github.com/Alexarr6/Prefect.git
+  reference: null
+  access_token: '**********'
+  include_git_objects: true
+  _block_document_id: 69043292-eb94-4558-b443-3ad4ad9ee580
+  _block_document_name: prefect-repo
+  _is_anonymous: false
+  block_type_slug: github
+  _block_type_slug: github
+path: ''
+entrypoint: hello.py:hello_world
 parameter_openapi_schema:
   title: Parameters
   type: object
@@ -42,5 +51,5 @@ parameter_openapi_schema:
   required:
   - msg
   definitions: null
-timestamp: '2023-09-12T11:26:06.159997+00:00'
+timestamp: '2023-09-12T12:54:34.988566+00:00'
 triggers: []
